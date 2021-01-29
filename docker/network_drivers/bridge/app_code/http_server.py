@@ -10,6 +10,8 @@ class Resquest(BaseHTTPRequestHandler):
         self.send_header('Content-type', 'application/json')
         self.end_headers()
         self.wfile.write(json.dumps(data).encode())
+        self.wfile.writelines(bytes(["hello","world"]))
+
     
 if __name__ == '__main__':
     server = HTTPServer(host, Resquest)
