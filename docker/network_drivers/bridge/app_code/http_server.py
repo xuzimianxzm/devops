@@ -1,8 +1,5 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
-import json
 import urllib.request
-import tempfile
-import shutil
 import sys
 import getopt
 
