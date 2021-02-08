@@ -4,19 +4,19 @@ import sys
 import getopt
 
 data = {'result': 'hello world'}
-host = ("localhost", 8080)
+host = ("localhost", 80)
 
 
 class Resquest(BaseHTTPRequestHandler):
     def do_GET(self):
-        url = self.processCommand()
-        file = urllib.request.urlopen(url)
-        html = file.read()
+        # url = self.processCommand()
+        # file = urllib.request.urlopen(url)
+        # html = file.read()
         self.send_response(200)
         self.send_header('Content-type', 'text/html;charset=utf-8')
         self.end_headers()
-        self.wfile.write(html)
-        file.close()
+        self.wfile.write(bytes("hello world", "utf-8"))
+        # file.close()
 
     def processCommand(self):
         comandArgStrs = sys.argv[1:]
