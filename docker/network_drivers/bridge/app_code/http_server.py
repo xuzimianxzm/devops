@@ -20,7 +20,6 @@ class Resquest(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write("GET request for {}, and return hello world".format(
             self.path).encode('utf-8'))
-        # self.wfile.close()
         # file.close()
 
     def processCommand(self):
