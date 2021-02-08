@@ -2,9 +2,10 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 import urllib.request
 import sys
 import getopt
+import logging
 
 data = {'result': 'hello world'}
-host = ("localhost", 80)
+host = ("", 8090)
 
 
 class Resquest(BaseHTTPRequestHandler):
@@ -12,10 +13,14 @@ class Resquest(BaseHTTPRequestHandler):
         # url = self.processCommand()
         # file = urllib.request.urlopen(url)
         # html = file.read()
+        logging.info("GET request,\nPath: %s\nHeaders:\n%s\n",
+                     str(self.path), str(self.headers))
         self.send_response(200)
         self.send_header('Content-type', 'text/html;charset=utf-8')
         self.end_headers()
-        self.wfile.write(bytes("hello world", "utf-8"))
+        self.wfile.write("GET request for {}, and return hello world".format(
+            self.path).encode('utf-8'))
+        # self.wfile.close()
         # file.close()
 
     def processCommand(self):
