@@ -26,6 +26,10 @@ or
 docker exec -it <containerId> /bin/sh 
 ````
 
+* if an image fails TO run or build,you can run the following command to enter the system of container
+````sh
+docker run -it a94f06af6e4c /bin/sh
+````
 ## Get the metadata of the container/image. 
 ````shell
 docker inspect <containerId> | grep "IPAddress"
