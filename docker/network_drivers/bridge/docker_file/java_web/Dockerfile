@@ -1,7 +1,7 @@
 FROM gradle:6.8-jdk11-hotspot as buildBootJar
 WORKDIR /home/gradle/project
 COPY ./code/java/web_demo .
-RUN ./gradlew bootJar
+RUN gradle bootJar
 
 FROM openjdk:11
 WORKDIR /usr/src/myapp
