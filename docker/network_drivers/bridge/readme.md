@@ -4,7 +4,7 @@ Note:
 
 ## build docker image
 ````shell
-# run command in the directory of docker/network_drivers/bridgels
+# run command in the directory of docker/network_drivers/bridge
 docker build -t python_web -f docker_file/python_web/Dockerfile .    
 ````
 
