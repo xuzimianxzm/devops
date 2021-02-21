@@ -18,4 +18,4 @@ else
     exit -1
 fi
 
-echo "=>" $(docker run -it --name python_web  -p 8086:8090/tcp  -d python_web)
+echo "=>" $(docker run -it --name python_web  -p 8086:8080/tcp  -d python_web)
