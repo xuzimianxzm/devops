@@ -1,23 +1,49 @@
 #! /bin/bash
 
 function runDockerFile() {
-    checkImages=$(docker images python_web)
-    if [[ $checkImages =~ 'python_web' ]]; then
-        echo "=> python_web image existed then removed the image and rebuild it:"
-        echo "=> removed the containers:" $(docker rm -f python_web)
-        echo "=> removed the images:" $(docker rmi -f python_web)
+    imageName=$1
+    port=$2
+    checkParameter "$imageName" "Please input image name in the first parameter"
+    checkParameter "$port" "Please input web port in the second parameter"
+
+    removedImage $imageName
+
+    buildImage $imageName
+
+    runImage $port
+}
+
+function removedImage() {
+    checkImages=$(docker images $imageName)
+    
+    if [[ $checkImages =~ $imageName ]]; then
+        echo "=> $imageName image existed then removed the image and rebuild it:"
+        echo "=> removed the containers named  $imageName:" $(docker rm -f $imageName)
+        echo "=> removed the images named $imageName:" $(docker rmi -f $imageName)
     else
-        echo "=> python_web image dose not existed then build the image:"
+        echo "=> $imageName image dose not existed then build the image:"
     fi
+}
 
-    echo $(docker build --force-rm -t python_web -f docker_file/python_web/Dockerfile .)
+function buildImage() {
+    echo $(docker build --force-rm -t $imageName -f docker_file/$imageName/Dockerfile .)
 
-    if [[ $checkImages =~ 'python_web' ]]; then
-        echo "=> python_web build succeed and then run the image:"
+    checkImages=$(docker images $imageName)
+    if [[ $checkImages =~ $imageName ]]; then
+        echo "=> $imageName build succeed and then run the image:"
     else
-        echo "=> python_web build failed and then exit!"
+        echo "=> $imageName build failed and then exit!"
         exit -1
     fi
+}
 
-    echo "=>" $(docker run -it --name python_web -p 8086:8080/tcp -d python_web)
+function runImage() {
+    echo "=>" $(docker run -it --name $imageName -p 8086:$port/tcp -d $imageName)
+}
+
+function checkParameter() {
+    if [[ -z $1 ]]; then
+        echo 'error:' $2
+        exit -1
+    fi
 }

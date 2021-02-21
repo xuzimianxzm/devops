@@ -7,4 +7,4 @@ cd `dirname $0`
 source code/shell/common.sh
 
 # excute function
-runDockerFile
+runDockerFile python_web 8086
