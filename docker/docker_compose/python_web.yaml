@@ -1,0 +1,8 @@
+version: '3'
+services:
+   python_web:
+     build: 
+       context: ../
+       dockerfile: docker_file/python_web/Dockerfile
+     ports: 
+       - "8086:8080"
