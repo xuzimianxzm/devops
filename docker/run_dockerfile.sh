@@ -16,7 +16,7 @@ fi
 
 
 if [[ -z $port ]]; then
-    read  -p "pless typing you want run image name: " input
+    read  -p "pless typing you want run web port: " input
     port=$input
 fi
 
