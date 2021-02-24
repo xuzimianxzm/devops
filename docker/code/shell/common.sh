@@ -38,7 +38,7 @@ function buildImage() {
 }
 
 function runImage() {
-    echo "=>" $(docker run -it --name $imageName -p 8086:$port/tcp -d $imageName)
+    echo "=>" $(docker run -it --name $imageName -p $port:8080/tcp -d $imageName)
 }
 
 function checkParameter() {
