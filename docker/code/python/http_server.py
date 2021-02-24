@@ -5,7 +5,7 @@ import getopt
 import logging
 
 data = {'result': 'hello world'}
-host = ("", 8090)
+host = ("", 8080)
 
 
 class Resquest(BaseHTTPRequestHandler):
