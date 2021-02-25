@@ -36,3 +36,9 @@ docker inspect <containerId> | grep "IPAddress"
 ````
 ## docker history show specified image create list
 docker history [OPTIONS] IMAGE
+
+## You can quickly do that (in your DEVELOPMENT environment) using
+docker stop $(docker ps -a -q) #stop ALL containers
+
+## To now remove all containers, run
+docker rm -f $(docker ps -a -q) # remove ALL containers
