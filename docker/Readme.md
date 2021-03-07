@@ -24,7 +24,7 @@ docker run --name mynginx1 -p 80:80 -d nginx
 ````shell
 $ docker run --cap-add=NET_ADMIN -it ubuntu:16.04
 ````
-#### --privileged 
+### --privileged 
 
 Give extended privileges to this container
 
