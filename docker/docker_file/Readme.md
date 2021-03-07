@@ -9,12 +9,27 @@ docker build --force-rm  -t python_web -f docker_file/python_web/Dockerfile .
 ````
 
 ## run docker image
+
 ````shell
 docker run -it --name python_web  -p 8086:8090/tcp  -d python_web
-
 # other directly test examples
 docker run -it --rm -p 8888:8080 -d tomcat:9.0
 docker run --name mynginx1 -p 80:80 -d nginx
+````
+
+### Capabilities
+> If you want have iptables access within your containers, you need to enable specific capabilities via the --cap-add=NET_ADMIN switch when running the container initially.
+
+#### Example
+````shell
+$ docker run --cap-add=NET_ADMIN -it ubuntu:16.04
+````
+#### --privileged 
+
+Give extended privileges to this container
+
+````shell
+$ docker run --privileged  -it ubuntu:16.04
 ````
 
 ## Enter the docker container

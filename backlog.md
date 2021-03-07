@@ -4,7 +4,7 @@
 
 ## Linux Tools Learning
 
-### 1. Linux ipconfig study demo
+### 1. Linux ifconfig study demo
  
 在一个docker linux 系统中，进行 veth pair, linux bridge 配置学习
 
