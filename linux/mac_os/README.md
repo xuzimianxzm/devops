@@ -63,3 +63,20 @@ more detail you can look the link reference: https://www.docker.com/blog/docker-
 ````sh
 screen ~/Library/Containers/com.docker.docker/Data/vms/0/tty
 ````
+
+## Docker on MacOS
+
+more detail you can look the link reference: https://docs.docker.com/docker-for-mac/networking/
+
+
+### Known limitations, use cases, and workarounds
+Following is a summary of current limitations on the Docker Desktop for Mac networking *stack, along with some ideas for workarounds.
+
+* There is no docker0 bridge on macOS
+> Because of the way networking is implemented in Docker Desktop for Mac, you cannot see a docker0 interface on the host. This interface is actually within the virtual machine.
+
+* I cannot ping my containers
+> Docker Desktop for Mac can’t route traffic to containers.
+
+* Per-container IP addressing is not possible
+> The docker (Linux) bridge network is not reachable from the macOS host.
