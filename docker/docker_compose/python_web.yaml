@@ -1,0 +1,20 @@
+version: "3"
+services:
+  python_web:
+    build:
+      context: ../
+      dockerfile: docker_file/python_web/Dockerfile
+    ports:
+      - "8086:8080"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080", "||", "exit", "1"] # 设置检测程序
+      interval: 0m30s # 设置检测间隔
+      timeout: 1s # 设置检测超时时间
+      retries: 0 # 设置重试次数
+      start_period: 2s # 启动后，多少秒开始启动检测程序
+    restart: "no"
+    env_file:
+      - python_web_flask.env
+    environment:
+      - ENV_VAR_A=42
+      - ENV_VAR_E=Apache web server

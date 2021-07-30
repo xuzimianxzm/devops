@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Main-Class: com.example.demo.DemoApplication
+Class-Path: jul-to-slf4j-1.7.30.jar log4j-to-slf4j-2.13.3.jar spring-bea
+ ns-5.3.3.jar jackson-datatype-jsr310-2.11.4.jar spring-boot-starter-tom
+ cat-2.4.2.jar spring-core-5.3.3.jar spring-context-5.3.3.jar jakarta.el
+ -3.0.3.jar spring-boot-autoconfigure-2.4.2.jar spring-aop-5.3.3.jar slf
+ 4j-api-1.7.30.jar spring-boot-starter-json-2.4.2.jar jackson-module-par
+ ameter-names-2.11.4.jar spring-boot-starter-logging-2.4.2.jar log4j-api
+ -2.13.3.jar tomcat-embed-websocket-9.0.41.jar spring-boot-starter-web-2
+ .4.2.jar jackson-annotations-2.11.4.jar logback-classic-1.2.3.jar sprin
+ g-jcl-5.3.3.jar jackson-databind-2.11.4.jar jakarta.annotation-api-1.3.
+ 5.jar spring-webmvc-5.3.3.jar jackson-core-2.11.4.jar logback-core-1.2.
+ 3.jar spring-boot-starter-2.4.2.jar spring-boot-2.4.2.jar tomcat-embed-
+ core-9.0.41.jar spring-web-5.3.3.jar jackson-datatype-jdk8-2.11.4.jar s
+ nakeyaml-1.27.jar spring-expression-5.3.3.jar
+
