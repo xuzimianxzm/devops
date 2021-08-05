@@ -1,3 +1,5 @@
+## references
+https://kubernetes.io/zh/docs/reference/kubectl/cheatsheet/
 #### 1. kubectl 环境切换
 
 配置 Kubectl 连接 AWS K8s 服务的环境：
