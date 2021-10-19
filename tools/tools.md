@@ -20,4 +20,14 @@ asdf-vm 是一个命令行工具，它可以让你同时安装多个版本的开
 胡皓写的入门：https://huhao.dev/posts/61efd12a/
 
 
+### base64
 
+base64 编码
+````sh
+echo -n  '明文' | base64
+````
+
+base64 解码
+````sh
+echo -n  'base64编码文本' | base64 -D
+````
