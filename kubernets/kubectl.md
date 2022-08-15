@@ -1,11 +1,19 @@
 ## references
+
 https://kubernetes.io/zh/docs/reference/kubectl/cheatsheet/
+
 #### 1. kubectl 环境切换
 
 配置 Kubectl 连接 AWS K8s 服务的环境：
 
 ```sh
   aws eks --region us-east-2 update-kubeconfig --name sw21-eks-cluster
+```
+
+查询 K8s 集群环境
+
+```sh
+   kubectl config get-contexts
 ```
 
 切换为 minikube 集群环境：
